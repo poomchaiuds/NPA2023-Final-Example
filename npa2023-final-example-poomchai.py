@@ -100,8 +100,8 @@ while True:
 #######################################################################################
 # 7. Provide the OpenWeather Geocoding key values for latitude and longitude.
         # Set the lat and lng key as retuned by the OpenWeather Geocoding API in variables
-        locationLat = json_data["lat"]
-        locationLng = json_data["lon"]
+        locationLat = json_data[0]["lat"]
+        locationLng = json_data[0]["lon"]
 
 #######################################################################################
 # 8. Prepare openweatherAPIGetParameters for OpenWeather API, https://openweathermap.org/api; current weather data for one location by geographic coordinates.
@@ -111,7 +111,7 @@ while True:
                                 "limit" : 1,
                                 "lat" : locationLat,
                                 "lon" : locationLng,
-                                "appid" : openkey,
+                                "appid" : "89a03676a8740990d9fbbef0b0f1b446",
                             }
 
 #######################################################################################
@@ -128,6 +128,8 @@ while True:
 # 10. Complete the code to get weather description and weather temperature
         weather_desc = json_data_weather["weather"][0]["description"]
         weather_temp = json_data_weather["main"]["temp"]
+        print("Weather description: " + weather_desc)
+        print("Weather temperature: " + str(weather_temp))
 
 #######################################################################################
 # 11. Complete the code to format the response message.
